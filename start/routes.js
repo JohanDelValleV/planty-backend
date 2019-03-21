@@ -16,8 +16,14 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+// Route.get('/', () => {
+//   return { greeting: 'Hello world in JSON' }
+// })
 
-// Route.resource('','Controller').prefix('api/v1')
+Route.group(() => {
+  Route.get('evento', 'EventoController.index');
+  Route.get('evento/:id', 'EventoController.show');
+  Route.post('evento', 'EventoController.store');
+  Route.put('evento/:id', 'EventoController.update');
+  Route.delete('evento/:id', 'EventoController.destroy');  
+}).prefix('api/v1')
