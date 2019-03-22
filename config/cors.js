@@ -17,7 +17,7 @@ module.exports = {
   |
   */
   origin: function (currentOrigin) {
-    return currentOrigin === '127.0.0.1:8080'
+    return true
   },
 
   /*
