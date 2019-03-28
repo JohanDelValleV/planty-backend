@@ -1,6 +1,9 @@
 'use strict'
 
 const Evento = use('App/Models/Evento')
+var sudo = require('sudo-js');
+sudo.setPassword('vasquez123');
+const exec = require('child_process').exec
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -46,7 +49,16 @@ class EventoController {
    */
   async store ({ request, response }) {
     let evento = await Evento.create(request.all())
+    console.log(request)
+    
+    exec('echo "'+"12 * * * *"+' python3 /home/isaac/consPlanta/bomba.py" >> /home/isaac/consPlanta/cron')
+    var command = ['crontab', '>>', '/home/isaac/consPlanta/cron'];
+    sudo.exec(command, function(err, pid, result) {
+      console.log(result); // output '';
+    });
+
     return response.created(evento)
+
   }
 
   /**

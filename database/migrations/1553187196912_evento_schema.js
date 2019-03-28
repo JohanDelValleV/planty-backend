@@ -8,7 +8,7 @@ class EventoSchema extends Schema {
     this.create('eventos', (table) => {
       table.increments()
       table.date('date')
-      table.time('time')
+      table.string('time')
       table.boolean('status').defaultTo(false)
       table.timestamps()
     })
