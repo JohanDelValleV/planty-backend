@@ -51,11 +51,11 @@ class EventoController {
     let evento = await Evento.create(request.all())
     console.log(request)
     
-    exec('echo "'+"12 * * * *"+' python3 /home/isaac/consPlanta/bomba.py" >> /home/isaac/consPlanta/cron')
-    var command = ['crontab', '>>', '/home/isaac/consPlanta/cron'];
-    sudo.exec(command, function(err, pid, result) {
-      console.log(result); // output '';
-    });
+    // exec('echo "'+"12 * * * *"+' python3 /home/isaac/consPlanta/bomba.py" >> /home/isaac/consPlanta/cron')
+    // var command = ['crontab', '>>', '/home/isaac/consPlanta/cron'];
+    // sudo.exec(command, function(err, pid, result) {
+    //   console.log(result); // output '';
+    // });
 
     return response.created(evento)
 
