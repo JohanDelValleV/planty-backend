@@ -1,3 +1,5 @@
+# This is a backend repository for Planty, if you want to check the frontend you can check it out [here](https://github.com/JohanDelValleV/planty-frontend)
+
 # Adonis API application
 
 This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
